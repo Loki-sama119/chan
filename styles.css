@@ -1,19 +1,39 @@
-/* Bước 2: định dạng hộp div */
-.boxmodel {
-    margin: 0 auto;
-    width: 800px;
-    border: 10px solid;
-    padding: 10px;
-    border-color: chartreuse aqua blue blueviolet;
+/* Thực hành tạo menu dọc - theo nội dung CodeGym */
+body {
+  font-family: Arial, sans-serif;
 }
-
-/* Bước 3: định dạng cả ba đoạn văn */
-.boxmodel p {
-    border: 3px dotted darkred;
-    padding: 10px;
+#menu, #menu ul, #menu li {
+  padding: 0;
+  margin: 0;
 }
-
-/* Bước 4: đặt khoảng cách dưới từng đoạn văn */
-#boxmodel1 { margin-bottom: 20px; }
-#boxmodel2 { margin-bottom: 40px; }
-#boxmodel3 { margin-bottom: 60px; }
+#menu li {
+  list-style: none;
+  position: relative;
+  width: 100px;
+  height: 30px;
+  padding: 0 20px;
+  background-color: black;
+  line-height: 30px;
+  cursor: pointer;
+}
+#menu li a {
+  text-decoration: none;
+  color: white;
+  white-space: nowrap;
+  display: block;
+}
+#menu li:hover, #menu li:focus-within {
+  background-color: red;
+}
+#menu ul ul {
+  position: absolute;
+  top: 0;
+  left: 140px; /* 100px nội dung + 2*20px padding */
+  visibility: hidden;
+  z-index: 1;
+}
+#menu ul li:hover > ul, #menu ul li:focus-within > ul {
+  visibility: visible;
+}
+/* Mục con dài hơn vẫn dễ đọc */
+#menu ul ul li { width: 185px; }
